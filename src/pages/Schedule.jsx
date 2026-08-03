@@ -1,5 +1,5 @@
 import ScheduleCard from '../components/schedule/ScheduleCard'
-import { schedules } from '../data/schedules'
+import { schedulesNewestFirst } from '../data/schedules'
 
 function Schedule() {
   return (
@@ -10,7 +10,7 @@ function Schedule() {
         <p>공연과 방송, nnn을 직접 만날 수 있는 일정입니다.</p>
       </header>
       <section className="schedule-list" aria-label="공연 일정">
-        {schedules.map((schedule) => <ScheduleCard key={schedule.id} schedule={schedule} />)}
+        {schedulesNewestFirst.map((schedule) => <ScheduleCard key={schedule.id} schedule={schedule} />)}
       </section>
     </div>
   )

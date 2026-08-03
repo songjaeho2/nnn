@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Music from './pages/Music'
 import AlbumDetail from './pages/AlbumDetail'
 import Schedule from './pages/Schedule'
+import ScheduleDetail from './pages/ScheduleDetail'
 import './styles/app.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/music/:albumId" element={<AlbumDetail />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/schedule/:scheduleId" element={<ScheduleDetail />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

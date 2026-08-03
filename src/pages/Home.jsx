@@ -3,16 +3,19 @@ import { FiArrowRight } from 'react-icons/fi'
 import AnnouncementSlider from '../components/layout/AnnouncementSlider'
 import SectionHeader from '../components/layout/SectionHeader'
 import AlbumFeature from '../components/music/AlbumFeature'
-import MusicVideoCard from '../components/music/MusicVideoCard'
+import MusicVideoSlider from '../components/music/MusicVideoSlider'
 import MainVisual from '../components/profile/MainVisual'
 import SocialLinks from '../components/profile/SocialLinks'
 import ScheduleCard from '../components/schedule/ScheduleCard'
 import { albums } from '../data/music'
-import { schedules } from '../data/schedules'
+import { schedulesNewestFirst } from '../data/schedules'
 
 function Home() {
   const latestAlbum = albums[0]
-  const featuredMusicVideo = latestAlbum.tracks.find((track) => track.youtubeUrl)
+  const musicVideos = albums
+    .flatMap((album) => album.tracks)
+    .filter((track) => track.youtubeUrl || track.youtubeEmbedUrl)
+    .sort((a, b) => (a.musicVideoOrder ?? Number.MAX_SAFE_INTEGER) - (b.musicVideoOrder ?? Number.MAX_SAFE_INTEGER))
 
   return (
     <div className="page home-page">
@@ -25,10 +28,10 @@ function Home() {
         <AlbumFeature album={latestAlbum} />
       </section>
 
-      {featuredMusicVideo && (
+      {musicVideos.length > 0 && (
         <section className="section-block">
           <SectionHeader eyebrow="WATCH" title="Music Video" />
-          <MusicVideoCard track={featuredMusicVideo} />
+          <MusicVideoSlider videos={musicVideos} />
         </section>
       )}
 
@@ -39,7 +42,7 @@ function Home() {
           action={<Link to="/schedule">전체 보기 <FiArrowRight /></Link>}
         />
         <div className="schedule-list schedule-list--compact">
-          {schedules.slice(0, 3).map((schedule) => (
+          {schedulesNewestFirst.slice(0, 3).map((schedule) => (
             <ScheduleCard key={schedule.id} schedule={schedule} compact />
           ))}
         </div>

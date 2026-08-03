@@ -8,21 +8,25 @@ const actions = [
 
 function MainVisual() {
   async function shareProfile() {
-    if (navigator.share) {
-      await navigator.share({ title: 'nnn', url: window.location.href })
-    } else {
-      await navigator.clipboard?.writeText(window.location.href)
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: 'nnn', url: window.location.href })
+      } else {
+        await navigator.clipboard?.writeText(window.location.href)
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError') console.error('공유에 실패했습니다.', error)
     }
   }
 
   return (
     <section className="hero">
-      <img src="/data/image/nnn커버4.jpg" />
+      <img src="/data/image/nnn커버4.jpg" alt="아티스트 nnn 메인 비주얼" />
       <div className="hero__overlay" />
       <div className="hero__content">
         <span className="hero__label">OFFICIAL ARTIST</span>
         <h1>nnn</h1>
-        <p></p>
+
         <div className="hero__actions">
           {actions.map(({ label, icon: Icon }) => (
             <button key={label} type="button" onClick={label === '공유' ? shareProfile : undefined}>

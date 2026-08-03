@@ -16,7 +16,7 @@ function TrackList({ tracks, streamingLinks, activeTrack, onPlayVideo }) {
         const isPlaying = activeTrack?.title === track.title
         const trackStreamingLinks = track.streamingLinks ?? streamingLinks
         const hasStreamingLinks = trackStreamingLinks?.length > 0
-        const hasMusicVideo = Boolean(track.youtubeEmbedUrl)
+        const hasMusicVideo = Boolean(track.youtubeUrl || track.youtubeEmbedUrl)
         const hasListenOptions = hasStreamingLinks || hasMusicVideo
 
         return (

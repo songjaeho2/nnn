@@ -1,10 +1,15 @@
 import { FiMusic, FiX } from 'react-icons/fi'
+import { getYouTubeEmbedUrl } from '../../utils/youtube'
 
 function MiniPlayer({ track, onClose }) {
   if (!track) return null
 
-  const separator = track.youtubeEmbedUrl.includes('?') ? '&' : '?'
-  const playerUrl = `${track.youtubeEmbedUrl}${separator}autoplay=1&playsinline=1&rel=0`
+  const sourceUrl = track.youtubeEmbedUrl || track.youtubeUrl
+  const embedUrl = getYouTubeEmbedUrl(sourceUrl)
+
+  if (!embedUrl) return null
+
+  const playerUrl = `${embedUrl}?autoplay=1&playsinline=1&rel=0`
 
   return (
     <aside className="mini-player" aria-label="현재 재생 중">
@@ -20,7 +25,7 @@ function MiniPlayer({ track, onClose }) {
       </div>
       <div className="mini-player__video">
         <iframe
-          key={track.youtubeEmbedUrl}
+          key={embedUrl}
           src={playerUrl}
           title={`${track.title} YouTube 플레이어`}
           allow="autoplay; encrypted-media; picture-in-picture"
