@@ -114,19 +114,22 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: clamp(6px, 2vw, 10px);
+  gap: clamp(6px, 1.8vw, 9px);
   width: 100%;
   margin: 14px 0 16px;
-  padding: 0 0 5px;
-  overflow: hidden;
+  padding: 4px 2px 7px;
+  overflow: visible;
 }
 .social-row::-webkit-scrollbar { display: none; }
 .social-row a {
-  display: grid; width: clamp(38px, 11vw, 50px); height: clamp(38px, 11vw, 50px); flex: 0 1 50px; place-items: center;
-  border: 1px solid var(--line); border-radius: 50%; color: #bfc1bc; background: var(--surface); font-size: clamp(16px, 5vw, 20px);
+  --social-icon-size: clamp(34px, 10vw, 44px);
+  display: grid; width: var(--social-icon-size); min-width: var(--social-icon-size); height: var(--social-icon-size); aspect-ratio: 1 / 1; flex: 0 0 var(--social-icon-size); place-items: center;
+  border: 1px solid var(--line); border-radius: 999px; color: #bfc1bc; background: var(--surface); font-size: clamp(15px, 4.5vw, 18px);
   transition: .2s ease;
 }
-.social-row a:hover { color: #0a0b0a; border-color: var(--accent); background: var(--accent); transform: translateY(-3px); }
+.social-row a svg { display: block; width: 1em; height: 1em; flex: 0 0 auto; }
+.social-row a:hover,
+.social-row a:focus-visible { color: #0a0b0a; border-color: var(--accent); background: var(--accent); transform: scale(1.06); }
 
 .section-block { margin-top: 48px; }
 .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 17px; }
@@ -143,7 +146,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .album-feature__info { padding: 18px 5px 6px; }
 .album-feature__info > span, .album-card span { color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .1em; }
-.album-feature h3 { overflow: hidden; margin: 5px 0 8px; font-size: 25px; letter-spacing: -.04em; text-overflow: ellipsis; white-space: nowrap; }
+.album-feature h3 { overflow: hidden; margin: 5px 0 8px; font-size: 22px; letter-spacing: -.035em; text-overflow: ellipsis; white-space: nowrap; }
 .album-feature p, .album-card p, .page-title p, .album-detail__description {
   margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; word-break: keep-all;
 }
@@ -255,7 +258,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .album-card:hover { border-color: rgba(216,255,62,.35); transform: translateY(-2px); }
 .album-card__cover { aspect-ratio: 1; overflow: hidden; border-radius: 14px; }
 .album-card > div:nth-child(2) { align-self: center; min-width: 0; padding-right: 20px; }
-.album-card h2 { overflow: hidden; margin: 5px 0 7px; font-size: 19px; letter-spacing: -.04em; text-overflow: ellipsis; white-space: nowrap; }
+.album-card h2 { overflow: hidden; margin: 5px 0 7px; font-size: 16px; letter-spacing: -.025em; text-overflow: ellipsis; white-space: nowrap; }
 .album-card p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .album-card__arrow { position: absolute; top: 15px; right: 15px; color: var(--muted); }
 
@@ -275,7 +278,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   object-fit: cover;
   object-position: center;
 }
-.album-detail h1 { overflow: hidden; margin: 6px 0 9px; font-size: clamp(27px, 8.2vw, 32.5px); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
+.album-detail h1 { overflow: hidden; margin: 6px 0 9px; font-size: clamp(22px, 7vw, 28px); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
 .streaming-links {
   display: flex;
   gap: 10px;
@@ -381,6 +384,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .hero { min-height: 430px; }
   .hero h1 { font-size: 44px; }
   .album-card { grid-template-columns: 90px 1fr; }
+  .album-card h2 { font-size: 13.5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
