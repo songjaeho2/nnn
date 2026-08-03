@@ -311,6 +311,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .track-list__number { color: #5d5f5a; font-size: 10px; }
 .track-list__info { display: grid; min-width: 0; flex: 1; gap: 3px; }
 .track-list strong { font-size: 12px; }
+.track-list__info strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .track-list small, .track-list time { color: var(--muted); font-size: 9px; }
 .track-list__row > button { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; color: var(--text); background: transparent; }
 .track-list__row > button:hover { color: #0a0b0a; background: var(--accent); }
