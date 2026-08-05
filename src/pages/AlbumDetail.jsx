@@ -5,10 +5,14 @@ import TrackList from '../components/music/TrackList'
 import MiniPlayer from '../components/music/MiniPlayer'
 import StreamingLinks from '../components/music/StreamingLinks'
 import { albums } from '../data/music'
+import { albumDetails } from '../data/albumDetails'
 
 function AlbumDetail() {
   const { albumId } = useParams()
   const album = albums.find(({ id }) => id === albumId)
+  const details = album ? albumDetails[album.id] : null
+  const introduction = details?.introduction || album?.description
+  const credits = details?.credits
   const [activeTrack, setActiveTrack] = useState(null)
 
   if (!album) {
@@ -27,7 +31,6 @@ function AlbumDetail() {
       </figure>
       <span className="album-detail__meta">{album.type} · {album.releaseDate}</span>
       <h1>{album.title}</h1>
-      <p className="album-detail__description">{album.description}</p>
       <StreamingLinks links={album.streamingLinks} />
       <section className="track-section">
         <div className="section-header"><div><span>SONGS</span><h2>Track List</h2></div></div>
@@ -38,6 +41,18 @@ function AlbumDetail() {
           onPlayVideo={setActiveTrack}
         />
       </section>
+      {introduction && (
+        <section className="album-introduction">
+          <span>ALBUM NOTE</span>
+          <h2>앨범 소개</h2>
+          <p>{introduction}</p>
+          {credits && (
+            <Link className="credits-link" to={`/music/${encodeURIComponent(album.id)}/credits`}>
+              전체 크레딧 보기
+            </Link>
+          )}
+        </section>
+      )}
       <MiniPlayer track={activeTrack} onClose={() => setActiveTrack(null)} />
     </article>
   )

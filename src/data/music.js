@@ -8,12 +8,16 @@
  * - streamingLinks: 앨범 공통 듣기 링크입니다.
  * - 트랙 안에 streamingLinks를 추가하면 해당 트랙에서만 앨범 공통 링크 대신 사용됩니다.
  */
+// description: 뮤직 목록에 표시되는 짧은 요약문
 export const albums = [
+
+
+
   {
-    id: '마지막이라는 걸 알아',
-    title: '마지막이라는 걸 알아',
+    id: '마지막이란 걸 알아',
+    title: '마지막이란 걸 알아',
     type: 'New Album',
-    releaseDate: '2026',
+    releaseDate: '2026.06.09',
     cover: '/data/image/마지막이란 걸 알아 앨범커버.jpg',
     description: '몽환적인 사운드 위에 이별의 잔상을 담아낸 nnn의 감성적인 싱글.',
     tracks: [
@@ -72,5 +76,54 @@ export const albums = [
   },
 
 
+  {
+    id: '사랑이 필요해',
+    title: '사랑이 필요해',
+    type: 'Digital Single',
+    releaseDate: '2024.10.22',
+    cover: '/data/image/사랑이 필요해 앨범커버.jpg',
+    description: '나는 사랑이 필요해.',
+    tracks: [
+      {
+        title: '사랑이 필요해',
+        duration: '03:07',
+        musicVideoOrder: 1,
+      },
+   
+
+    ],
+    streamingLinks: [
+      { label: 'Spotify', url: 'https://open.spotify.com/album/7wesFyY7l1MTHd7u8Mut4V' },
+      { label: 'Apple Music', url: 'https://music.apple.com/kr/album/need-love-single/1774193304' },
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=43Dr8ORc6_Y' },
+      { label: 'YouTube Music', url: 'https://music.youtube.com/playlist?list=OLAK5uy_mNHYjtPBO_L3Z66-8sroeJuYL0ODjAN_E&si=FSEygfnyjStPriCm' },
+      { label: 'Melon', url: 'https://www.melon.com/album/detail.htm?albumId=11620546' },
+    ],
+  },
+
+  {
+    id: 'What You Want',
+    title: 'What You Want',
+    type: 'Digital Single',
+    releaseDate: '2024.09.17',
+    cover: '/data/image/What You Want 앨범커버.jpg',
+    description: '내겐 없어.',
+    tracks: [
+      {
+        title: 'What You Want',
+        duration: '03:18',
+        musicVideoOrder: 1,
+      },
+   
+
+    ],
+    streamingLinks: [
+      { label: 'Spotify', url: 'https://open.spotify.com/album/1n82eUeg2A72BETup2FAIi' },
+      { label: 'Apple Music', url: 'https://music.apple.com/kr/album/what-you-want-single/1767841399' },
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=d4WWp9SVmsg' },
+      { label: 'YouTube Music', url: 'https://music.youtube.com/playlist?list=OLAK5uy_mJ0F6Pt6Z4XEnGDiA39O6YmtgGnr0l-a0' },
+      { label: 'Melon', url: 'https://www.melon.com/album/detail.htm?albumId=11593455' },
+    ],
+  },
 
 ]
