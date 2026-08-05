@@ -1,12 +1,18 @@
-import { FiBell, FiHeart, FiShare2 } from 'react-icons/fi'
-
-const actions = [
-  { label: '좋아요', icon: FiHeart },
-  { label: '공유', icon: FiShare2 },
-  { label: '알림 받기', icon: FiBell },
-]
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FiCalendar, FiHeart, FiShare2 } from 'react-icons/fi'
 
 function MainVisual() {
+  const [liked, setLiked] = useState(() => localStorage.getItem('nnn-profile-liked') === 'true')
+
+  function toggleLike() {
+    setLiked((current) => {
+      const next = !current
+      localStorage.setItem('nnn-profile-liked', String(next))
+      return next
+    })
+  }
+
   async function shareProfile() {
     try {
       if (navigator.share) {
@@ -28,11 +34,15 @@ function MainVisual() {
         <h1>nnn</h1>
 
         <div className="hero__actions">
-          {actions.map(({ label, icon: Icon }) => (
-            <button key={label} type="button" onClick={label === '공유' ? shareProfile : undefined}>
-              <Icon /><span>{label}</span>
-            </button>
-          ))}
+          <button className={liked ? 'is-liked' : ''} type="button" aria-pressed={liked} onClick={toggleLike}>
+            <FiHeart /><span>{liked ? '좋아요 완료' : '좋아요'}</span>
+          </button>
+          <button type="button" onClick={shareProfile}>
+            <FiShare2 /><span>공유</span>
+          </button>
+          <Link to="/schedule">
+            <FiCalendar /><span>공연 일정</span>
+          </Link>
         </div>
       </div>
     </section>

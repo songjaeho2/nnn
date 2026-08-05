@@ -102,13 +102,15 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .hero h1 { margin: 5px 0 0; font-size: 50px; line-height: 1; letter-spacing: -.07em; }
 .hero__content > p { margin: 9px 0 21px; color: #bec0bb; font-size: 13px; letter-spacing: .08em; }
 .hero__actions { display: flex; gap: 8px; }
-.hero__actions button {
+.hero__actions button,
+.hero__actions a {
   display: flex; flex: 1; height: 42px; align-items: center; justify-content: center; gap: 7px;
   padding: 0; border: 1px solid rgba(255,255,255,.12); border-radius: 13px;
   color: #e8e9e5; background: rgba(255,255,255,.07); font-size: 15px; transition: .2s ease;
 }
-.hero__actions button span { font-size: 10px; font-weight: 600; }
-.hero__actions button:hover, .hero__actions button:active { color: #0a0b0a; background: var(--accent); transform: translateY(-2px); }
+.hero__actions button span, .hero__actions a span { font-size: 10px; font-weight: 600; }
+.hero__actions button:hover, .hero__actions button:active, .hero__actions a:hover, .hero__actions a:active, .hero__actions button.is-liked { color: #0a0b0a; background: var(--accent); transform: translateY(-2px); }
+.hero__actions button.is-liked svg { fill: currentColor; }
 
 .social-row {
   display: flex;
