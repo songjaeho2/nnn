@@ -156,7 +156,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .primary-button:hover { filter: brightness(.9); transform: translateY(-1px); }
 
-.video-feature { position: relative; display: block; aspect-ratio: 16/10; overflow: hidden; border-radius: 22px; background: var(--surface); }
+.video-feature { position: relative; display: block; width: 100%; aspect-ratio: 16/10; overflow: hidden; padding: 0; border: 0; border-radius: 22px; color: inherit; background: var(--surface); text-align: left; }
 .video-feature::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.88)); content: ''; }
 .video-feature__play { position: absolute; z-index: 2; top: 50%; left: 50%; display: grid; width: 58px; height: 58px; place-items: center; border-radius: 50%; color: #101110; background: var(--accent); font-size: 21px; transform: translate(-50%, -50%); transition: .2s; }
 .video-feature:hover .video-feature__play { transform: translate(-50%, -50%) scale(1.08); }
@@ -288,7 +288,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   scrollbar-width: none;
 }
 .streaming-links::-webkit-scrollbar { display: none; }
-.streaming-links a {
+.streaming-links a,
+.streaming-links > button {
   display: grid;
   width: 48px;
   height: 48px;
@@ -302,14 +303,26 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   transition: .2s ease;
 }
 .streaming-links a:hover,
-.streaming-links a:focus-visible {
+.streaming-links a:focus-visible,
+.streaming-links > button:hover,
+.streaming-links > button:focus-visible {
   color: #0a0b0a;
   border-color: var(--accent);
   background: var(--accent);
   transform: translateY(-2px);
 }
 .album-detail > .streaming-links { padding-top: 4px; }
-.album-detail > .streaming-links a { width: 42px; height: 42px; font-size: 18px; }
+.album-detail > .streaming-links a,
+.album-detail > .streaming-links > button { width: 42px; height: 42px; font-size: 18px; }
+.streaming-dialog { position: fixed; z-index: 100; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 18px; background: rgba(0, 0, 0, .72); backdrop-filter: blur(6px); }
+.streaming-dialog__panel { position: relative; width: min(100%, 394px); padding: 28px 20px 20px; border: 1px solid var(--line); border-radius: 22px; background: #151616; box-shadow: 0 24px 70px rgba(0, 0, 0, .65); animation: player-in .2s ease-out; }
+.streaming-dialog__close { position: absolute; top: 12px; right: 12px; display: grid; width: 34px; height: 34px; place-items: center; padding: 0; border: 0; border-radius: 50%; color: var(--text); background: #242625; font-size: 18px; }
+.streaming-dialog__panel > span { color: var(--accent); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+.streaming-dialog__panel h2 { margin: 7px 36px 10px 0; font-size: 20px; line-height: 1.35; }
+.streaming-dialog__panel p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; word-break: keep-all; }
+.streaming-dialog__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 22px; }
+.streaming-dialog__actions button { display: flex; min-height: 45px; align-items: center; justify-content: center; gap: 7px; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: #202221; font-size: 10px; font-weight: 800; }
+.streaming-dialog__actions .streaming-dialog__open { color: #0a0b0a; border-color: var(--accent); background: var(--accent); }
 .track-section { margin-top: 44px; }
 .album-introduction { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
 .album-introduction > span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: .17em; }
@@ -340,7 +353,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .track-options__actions { display: flex; min-width: 0; flex-wrap: wrap; align-items: center; gap: 9px; overflow: visible; }
 .track-options__actions::-webkit-scrollbar { display: none; }
 .streaming-links--track { flex: 0 1 auto; flex-wrap: wrap; margin: 0; padding: 0; overflow: visible; }
-.streaming-links--track a { width: 38px; height: 38px; font-size: 17px; }
+.streaming-links--track a,
+.streaming-links--track > button { width: 38px; height: 38px; font-size: 17px; }
 .music-video-button {
   display: flex;
   height: 38px;
@@ -358,6 +372,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .music-video-button span { color: inherit; font-size: 8px; font-weight: 800; letter-spacing: .08em; white-space: nowrap; }
 .music-video-button:hover { color: #0a0b0a; background: var(--accent); }
 .album-detail--player-open { padding-bottom: 340px; }
+.home-page--player-open { padding-bottom: 340px; }
 .mini-player {
   position: fixed;
   z-index: 60;

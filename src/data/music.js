@@ -71,7 +71,7 @@ export const albums = [
       { label: 'Apple Music', url: 'https://music.apple.com/kr/album/asymmetry-ep/1834595201' },
       { label: 'YouTube', url: 'https://www.youtube.com/watch?v=zjU2ei8SP6k' },
       { label: 'YouTube Music', url: 'https://music.youtube.com/playlist?list=OLAK5uy_k-dq3hp4DIF8MvvgqPf1LAwDJtIc0uldY' },
-      { label: 'Melon', url: 'https://www.melon.com/artist/timeline.htm?artistId=3940933' },
+      { label: 'Melon', url: 'https://www.melon.com/album/detail.htm?albumId=12068723' },
     ],
   },
 

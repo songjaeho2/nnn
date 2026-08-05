@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import MusicVideoCard from './MusicVideoCard'
 
-function MusicVideoSlider({ videos }) {
+function MusicVideoSlider({ videos, onPlayVideo }) {
   const sliderRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -30,7 +30,7 @@ function MusicVideoSlider({ videos }) {
       <div className="music-video-slider__viewport" ref={sliderRef} onScroll={handleScroll}>
         {videos.map((video) => (
           <div className="music-video-slider__slide" key={video.youtubeUrl || video.youtubeEmbedUrl}>
-            <MusicVideoCard track={video} />
+            <MusicVideoCard track={video} onPlay={onPlayVideo} />
           </div>
         ))}
       </div>

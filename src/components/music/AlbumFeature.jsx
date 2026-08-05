@@ -12,7 +12,7 @@ function AlbumFeature({ album }) {
         <span>{album.type} · {album.releaseDate}</span>
         <h3>{album.title}</h3>
         <p>{album.description}</p>
-        <Link className="primary-button" to={`/music/${album.id}`}>
+        <Link className="primary-button" to="/music">
           Listen <FiArrowUpRight />
         </Link>
       </div>

@@ -1,20 +1,19 @@
 import { FiPlay } from 'react-icons/fi'
-import { getYouTubeThumbnail, getYouTubeWatchUrl } from '../../utils/youtube'
+import { getYouTubeThumbnail, getYouTubeVideoId } from '../../utils/youtube'
 
-function MusicVideoCard({ track, artist = 'nnn' }) {
+function MusicVideoCard({ track, artist = 'nnn', onPlay }) {
   const sourceUrl = track?.youtubeUrl || track?.youtubeEmbedUrl
-  const watchUrl = getYouTubeWatchUrl(sourceUrl)
+  const videoId = getYouTubeVideoId(sourceUrl)
   const thumbnail = track?.musicVideoThumbnail || getYouTubeThumbnail(sourceUrl)
 
-  if (!watchUrl) return null
+  if (!videoId) return null
 
   return (
-    <a
+    <button
+      type="button"
       className="video-feature image-fallback"
-      href={watchUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${track.title} 뮤직비디오 YouTube에서 보기`}
+      aria-label={`${track.title} 뮤직비디오 재생`}
+      onClick={() => onPlay(track)}
     >
       <img src={thumbnail} alt={`${track.title} 뮤직비디오 썸네일`} loading="lazy" />
       <span className="video-feature__play"><FiPlay /></span>
@@ -22,7 +21,7 @@ function MusicVideoCard({ track, artist = 'nnn' }) {
         <small>OFFICIAL MUSIC VIDEO</small>
         <strong>{artist} — {track.title}</strong>
       </div>
-    </a>
+    </button>
   )
 }
 
