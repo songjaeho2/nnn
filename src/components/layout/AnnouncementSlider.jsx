@@ -6,7 +6,7 @@ const announcements = [
 
   { tag: 'CONCERT', text: '2026 11.13 - nnn 콘서트 예정', link: '/schedule/busan-festival' },
   { tag: 'CONCERT', text: '2026 8.01 공연 [예매 종료]', link: '/schedule/nnn-live-seoul' },
-  { tag: 'NEW ALBUM', text: '마지막이란 걸 알아 발매', link: '/music/마지막이라는 걸 알아' },
+  { tag: 'NEW ALBUM', text: '마지막이란 걸 알아 발매', link: '/music' },
 ]
 
 function AnnouncementSlider() {

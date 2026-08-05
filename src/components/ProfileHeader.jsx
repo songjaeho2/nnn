@@ -9,7 +9,7 @@ function ProfileHeader() {
         />
       </div>
       <h1>nnn</h1>
-      <p className="profile-header__role">Singer · Bassist · Actor</p>
+      <p className="profile-header__role"></p>
       <p className="profile-header__bio">
         nnn.
       </p>
