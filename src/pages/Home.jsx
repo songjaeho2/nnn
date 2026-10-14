@@ -9,12 +9,14 @@ import MiniPlayer from '../components/music/MiniPlayer'
 import MainVisual from '../components/profile/MainVisual'
 import SocialLinks from '../components/profile/SocialLinks'
 import ScheduleCard from '../components/schedule/ScheduleCard'
+import FeaturedConcert from '../components/schedule/FeaturedConcert'
 import { albums } from '../data/music'
 import { schedulesNewestFirst } from '../data/schedules'
 
 function Home() {
   const [activeVideo, setActiveVideo] = useState(null)
   const latestAlbum = albums[0]
+  const featuredConcert = schedulesNewestFirst.find(({ date }) => date === '2026-11-13')
   const musicVideos = albums
     .flatMap((album) => album.tracks)
     .filter((track) => track.youtubeUrl || track.youtubeEmbedUrl)
@@ -25,6 +27,8 @@ function Home() {
       <AnnouncementSlider />
       <SocialLinks />
       <MainVisual />
+
+      <FeaturedConcert schedule={featuredConcert} />
 
       <section className="section-block">
         <SectionHeader eyebrow="NEW RELEASE" title="Latest Album" />

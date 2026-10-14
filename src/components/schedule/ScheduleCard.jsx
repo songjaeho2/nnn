@@ -5,7 +5,8 @@ function ScheduleCard({ schedule, compact = false }) {
   const [year, month, day] = schedule.date.split('-')
   const formattedDate = `${month.padStart(2, '0')}.${day.padStart(2, '0')}`
   const isEventEnded = schedule.status === 'ended'
-  const isTicketComingSoon = schedule.ticketStatus === 'coming-soon' || !schedule.ticketUrl
+  const isTicketOpen = schedule.ticketStatus === 'open'
+  const isTicketComingSoon = schedule.ticketStatus === 'coming-soon'
 
   return (
     <article className={`schedule-card${compact ? ' schedule-card--compact' : ''}`}>
@@ -31,6 +32,10 @@ function ScheduleCard({ schedule, compact = false }) {
       ) : isTicketComingSoon ? (
         <span className="ticket-button ticket-button--disabled" aria-label="티켓 오픈 예정">
           오픈 예정
+        </span>
+      ) : isTicketOpen && !schedule.ticketUrl ? (
+        <span className="ticket-button" aria-label="예매 오픈">
+          예매 오픈
         </span>
       ) : (
         <a className="ticket-button" href={schedule.ticketUrl} target="_blank" rel="noopener noreferrer">

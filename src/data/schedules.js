@@ -23,16 +23,55 @@ export const schedules = [
     ticketUrl: 'https://lnkpie.com/product/concert/82/',
     poster: '/data/image/포스터1.png'
   },
+
+
+
+
+
+
   {
-    id: 'busan-festival', date: '2026-11-13', type: 'CONCERT', title: 'nnn CONCERT',
-    venue: '롤링홀 SEOUL', time: '20:00',
+    id: '롤링홀 콘서트', date: '2026-11-13', type: 'CONCERT', title: 'nnn x TWLV : GOOD FRIENDS',
+    venue: '롤링홀 SEOUL', time: '20:00-22;00',
     summary: 'nnn의 첫 단독 콘서트.',
-    detailDescription: `nnn의 첫 단독 콘서트입니다.
+    detailDescription: `nnn & TWLV 의 첫 단독 콘서트입니다.
 
-새로운 음악과 라이브 밴드 셋, 공연에서만 만날 수 있는 특별한 무대를 준비하고 있습니다.
+새로운 음악과 라이브 밴드 셋, 
+공연에서만 만날 수 있는 특별한 무대를 준비하고 있습니다.
 
-티켓 오픈 일정과 상세 관람 안내는 추후 공개됩니다.`,
-    ticketStatus: 'coming-soon',
+-좋은 친구들 그리고 멋진 순간들-`,
+    ticketStatus: 'open',
+    ticketUrl: 'https://ticket.melon.com/performance/index.htm?prodId=214031',
+    poster: '/data/포스터/롤링홀 포스터.jpg'
+  },
+
+
+
+
+
+
+
+  {
+    id: 'nnn-live-incheon', date: '2026-10-11', type: 'LIVE', title: 'Local Ground Yeonnam',
+    venue: '연남동 동진시장 일대 (미로길)', time: '16:00 - 22:00',
+    summary: 'nnn의 라이브 무대를 로컬 그라운드 연남에서 만나보세요.',
+    detailDescription: `nnn의 라이브 무대를 로컬 그라운드 연남에서 만나보세요.`,
+    status: 'ended',
+        poster: '/data/포스터/연남동 포스터.jpg'
+  },
+
+
+
+
+
+
+
+  {
+    id: 'nnn-autumn-festival', date: '2026-09-16', type: 'FESTIVAL', title: 'AUTUMN MUSIC FESTIVAL',
+    venue: '2026 SAU EXPO 신안산대학교', time: '21:00',
+    summary: '신안산대학교 SPECIAL GUEST',
+    detailDescription: `신안산대학교 야외 무대에서 펼쳐지는 nnn의 페스티벌 공연입니다.`,
+    status: 'ended',
+            poster: '/data/포스터/신안산 포스터.jpg'
   },
 
 ]

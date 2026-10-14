@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import { FiChevronRight } from 'react-icons/fi'
 
 const announcements = [
-
-  { tag: 'CONCERT', text: '2026 11.13 - nnn 콘서트 예정', link: '/schedule/busan-festival' },
-  { tag: 'CONCERT', text: '2026 8.01 공연 [예매 종료]', link: '/schedule/nnn-live-seoul' },
-  { tag: 'NEW ALBUM', text: '마지막이란 걸 알아 발매', link: '/music' },
+  {
+    tag: 'TICKET OPEN',
+    text: '11.13 nnn & TWLV 콘서트 예매하기',
+    link: 'https://ticket.melon.com/performance/index.htm?prodId=214031',
+  },
 ]
 
 function AnnouncementSlider() {

@@ -1,10 +1,12 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import AppBar from './AppBar'
 import CategoryNav from './CategoryNav'
+import TicketOpenPopup from './TicketOpenPopup'
 
 function MobileLayout() {
   const { pathname } = useLocation()
+  const [isTicketPopupOpen, setIsTicketPopupOpen] = useState(true)
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -12,6 +14,7 @@ function MobileLayout() {
 
   return (
     <div className="mobile-shell">
+      {isTicketPopupOpen && <TicketOpenPopup onClose={() => setIsTicketPopupOpen(false)} />}
       <AppBar />
       <CategoryNav />
       <main className="app-content">

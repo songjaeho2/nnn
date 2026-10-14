@@ -23,7 +23,8 @@ function ScheduleDetail() {
     weekday: 'short',
   }).format(new Date(year, month - 1, day))
   const isEventEnded = schedule.status === 'ended'
-  const isTicketComingSoon = schedule.ticketStatus === 'coming-soon' || !schedule.ticketUrl
+  const isTicketOpen = schedule.ticketStatus === 'open'
+  const isTicketComingSoon = schedule.ticketStatus === 'coming-soon'
 
   return (
     <article className="page schedule-detail">
@@ -79,6 +80,8 @@ function ScheduleDetail() {
         </span>
       ) : isTicketComingSoon ? (
         <span className="schedule-detail__ticket schedule-detail__ticket--disabled">티켓 오픈 예정</span>
+      ) : isTicketOpen && !schedule.ticketUrl ? (
+        <span className="schedule-detail__ticket">예매 오픈</span>
       ) : (
         <a className="schedule-detail__ticket" href={schedule.ticketUrl} target="_blank" rel="noopener noreferrer">
           티켓 예매하기
