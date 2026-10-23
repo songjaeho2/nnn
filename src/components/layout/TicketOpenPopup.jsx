@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { FiArrowUpRight, FiBell, FiX } from 'react-icons/fi'
+import { FiArrowUpRight, FiX } from 'react-icons/fi'
 
 const TICKET_URL = 'https://ticket.melon.com/performance/index.htm?prodId=214031'
 
@@ -26,19 +26,18 @@ function TicketOpenPopup({ onClose }) {
           <FiX />
         </button>
 
-        <div className="ticket-open-popup__badge"><FiBell /> TICKET OPEN</div>
-        <p className="ticket-open-popup__date">2026. 11. 13 · ROLLING HALL</p>
-        <h2 id="ticket-open-title">nnn &amp; TWLV<br />GOOD Friends</h2>
-
-        <div className="ticket-open-popup__time">
-          <span>10.14</span>
-          <strong>8:00</strong>
-          <small>PM</small>
+        <div className="ticket-open-popup__visual">
+          <img src="/data/포스터/롤링홀 캐러피.png" alt="nnn과 TWLV GOOD FRIENDS 단독 콘서트" />
+          <span className="ticket-open-popup__badge">NOW BOOKING</span>
         </div>
 
-        <p className="ticket-open-popup__copy">멜론티켓에서 예매가 시작됩니다.<br />오픈 시간을 놓치지 마세요.</p>
+        <div className="ticket-open-popup__body">
+          <p className="ticket-open-popup__date">2026. 11. 13 · 8PM · ROLLING HALL</p>
+          <h2 id="ticket-open-title">GOOD FRIENDS</h2>
+          <p className="ticket-open-popup__copy">nnn × TWLV 첫 단독 콘서트<br />좋은 친구들과 함께할 단 하루의 밤.</p>
+        </div>
         <a className="ticket-open-popup__cta" href={TICKET_URL} target="_blank" rel="noopener noreferrer">
-          멜론티켓 바로가기 <FiArrowUpRight />
+          남은 좌석 예매하기 <FiArrowUpRight />
         </a>
         <button className="ticket-open-popup__later" type="button" onClick={onClose}>닫기</button>
       </section>

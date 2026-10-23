@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap');
 
 :root {
-  font-family: Inter, 'Noto Sans KR', Arial, sans-serif;
-  color: #f1f1f1;
-  background: #0f0f0f;
+  font-family: Inter, 'Noto Serif KR', serif;
+  color: #191816;
+  background: #bdb6aa;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 * { box-sizing: border-box; }
 html { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
-body { margin: 0; max-width: 100%; min-width: 0; min-height: 100vh; overflow-x: hidden; background: #0f0f0f; }
+body { margin: 0; max-width: 100%; min-width: 0; min-height: 100vh; overflow-x: hidden; background: #bdb6aa; }
 #root { min-height: 100vh; }
 button, input { font: inherit; }
 button { border: 0; color: inherit; cursor: pointer; }
