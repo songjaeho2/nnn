@@ -74,6 +74,18 @@ function ScheduleDetail() {
         <p>{schedule.detailDescription || schedule.description || schedule.summary}</p>
       </section>
 
+      {schedule.lineup?.length > 0 && (
+        <section className="schedule-detail__lineup" aria-labelledby="lineup-title">
+          <span>LINEUP</span>
+          <h2 id="lineup-title">출연진</h2>
+          <ul>
+            {schedule.lineup.map((artist) => (
+              <li key={artist}><strong>{artist}</strong></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {isEventEnded ? (
         <span className="schedule-detail__ticket schedule-detail__ticket--disabled schedule-detail__ticket--ended">
           종료된 공연입니다

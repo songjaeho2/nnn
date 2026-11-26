@@ -6,21 +6,21 @@ function FeaturedConcert({ schedule }) {
   return (
     <section className="featured-concert" aria-labelledby="featured-concert-title">
       <div className="featured-concert__topline">
-        <span>LIVE AT ROLLING HALL</span>
+        <span>LIVE AT SENGGI STUDIO</span>
         <span className="featured-concert__status">TICKET OPEN</span>
       </div>
 
       <div className="featured-concert__date" aria-hidden="true">
-        <strong>11</strong><i /> <strong>13</strong>
+        <strong>12</strong><i /> <strong>12</strong>
       </div>
 
       <p className="featured-concert__year">2026 CONCERT</p>
-      <h2 id="featured-concert-title">TWLV <span>×</span> nnn<br />GOOD FRIENDS</h2>
+      <h2 id="featured-concert-title">TWLV DAYS</h2>
 
       <div className="featured-concert__info">
-        <span><FiCalendar /> 2026. 11. 13</span>
-        <span><FiClock /> 20:00</span>
-        <span><FiMapPin /> 롤링홀, SEOUL</span>
+        <span><FiCalendar /> 2026. 12. 12</span>
+        <span><FiClock /> 18:00</span>
+        <span><FiMapPin /> SengGi Studio</span>
       </div>
 
       <a href={schedule.ticketUrl} target="_blank" rel="noopener noreferrer">

@@ -9,6 +9,21 @@
  */
 export const schedules = [
   {
+    id: 'twlv-days-2026', date: '2026-12-12', type: 'CONCERT', title: 'TWLV DAYS',
+    venue: 'SengGi Studio', time: '18:00',
+    summary: 'TWLV와 친구들이 함께하는 TWLV DAYS',
+    detailDescription: `2026. 12. 12 (SAT)
+6:00 PM · SengGi Studio
+
+5F, 137, Wausan-ro
+Mapo-gu, Seoul`,
+    lineup: ['TWLV', 'nnn', '87 Dance', 'Meloh', 'James Keys'],
+    ticketStatus: 'open',
+    ticketUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSc1L4lbxl3IklaHbGa3pZRZM9KMJvOgcWhy4aJrwAWpqk-DUw/viewform',
+    poster: '/data/포스터/12일 포스터.JPG'
+  },
+
+  {
     id: 'nnn-live-seoul', date: '2026-08-01', type: 'CONCERT', title: 'TWLV & nnn A GOOD Friend OF Yours',
     status: 'ended',
     venue: '모래내 극락 LIVE HALL, SEOUL', time: '20:00 - 23:30',
@@ -31,24 +46,17 @@ export const schedules = [
 
   {
     id: '롤링홀 콘서트', date: '2026-11-13', type: 'CONCERT', title: 'nnn x TWLV : GOOD FRIENDS',
-    venue: '롤링홀 SEOUL', time: '20:00-22;00',
+    status: 'ended',
+    venue: '롤링홀 SEOUL', time: '20:00-22:00',
     summary: 'nnn의 첫 단독 콘서트.',
-    detailDescription: `nnn & TWLV 의 첫 단독 콘서트입니다.
+    detailDescription: `nnn & TWLV의 첫 단독 콘서트입니다.
 
-새로운 음악과 라이브 밴드 셋, 
-공연에서만 만날 수 있는 특별한 무대를 준비하고 있습니다.
+새로운 음악과 라이브 밴드 셋,
+공연에서만 만날 수 있는 특별한 무대를 선보였습니다.
 
--좋은 친구들 그리고 멋진 순간들-`,
-    ticketStatus: 'open',
-    ticketUrl: 'https://ticket.melon.com/performance/index.htm?prodId=214031',
+- 좋은 친구들 그리고 멋진 순간들 -`,
     poster: '/data/포스터/롤링홀 포스터.jpg'
   },
-
-
-
-
-
-
 
   {
     id: 'nnn-live-incheon', date: '2026-10-11', type: 'LIVE', title: 'Local Ground Yeonnam',

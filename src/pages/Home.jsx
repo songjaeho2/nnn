@@ -16,7 +16,7 @@ import { schedulesNewestFirst } from '../data/schedules'
 function Home() {
   const [activeVideo, setActiveVideo] = useState(null)
   const latestAlbum = albums[0]
-  const featuredConcert = schedulesNewestFirst.find(({ date }) => date === '2026-11-13')
+  const featuredConcert = schedulesNewestFirst.find(({ date }) => date === '2026-12-12')
   const musicVideos = albums
     .flatMap((album) => album.tracks)
     .filter((track) => track.youtubeUrl || track.youtubeEmbedUrl)

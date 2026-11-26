@@ -5,8 +5,8 @@ import { FiChevronRight } from 'react-icons/fi'
 const announcements = [
   {
     tag: 'TICKET OPEN',
-    text: '11.13 nnn & TWLV 콘서트 예매하기',
-    link: 'https://ticket.melon.com/performance/index.htm?prodId=214031',
+    text: '12.12 TWLV DAYS 예매하기',
+    link: '/schedule/twlv-days-2026',
   },
 ]
 
